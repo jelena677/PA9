@@ -13,7 +13,7 @@ plot(mtcars$wt, mtcars$mpg,
 Rmodel <- lm(mpg ~ wt, data = mtcars)
 
 #Fitted Regresion Line
-abline(model, col = "red")
+abline(Rmodel, col = "red")
 
 #Interpreting the slope
 slope_summary <- summary(Rmodel)
@@ -29,7 +29,7 @@ cat("The slope is statistically significant at the 0.05 level, indicating a sign
 
 #Predicting MPG for given weight
 new_data <- data.frame(wt = 6)
-prediction <- predict(model, newdata = new_data, interval = "prediction", level = 0.95)
+prediction <- predict(Rmodel, newdata = new_data, interval = "prediction", level = 0.95)
 cat("Predicted MPG for a 6,000-pound vehicle:\n")
 print(prediction)
 cat("Note: The weight value is outside the range of the dataset, which limits the accuracy of the prediction. Use caution when interpreting this result.\n")
